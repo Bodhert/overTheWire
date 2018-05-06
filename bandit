@@ -1,0 +1,77 @@
+// level - 0
+$ ssh bandit0@bandit.labs.overthewire.org -p 2220
+$ cat readme
+// boJ9jbbUNNfktd78OOpsqOltutMc3MY1 what cotains my readme 
+
+
+// level - 1
+$ ssh bandit1@bandit.labs.overthewire.org -p 2220
+// paswd boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+$ cat ./-
+// CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+
+//level 2
+$ ssh bandit2@bandit.labs.overthewire.org -p 2220
+// paswd CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+$ cat spaces\ in\ this\ filename 
+// UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+
+//level 3
+$ ssh bandit3@bandit.labs.overthewire.org -p 2220
+//passwd UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+$cat inhere/.hidden 
+//pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+//level 4
+$ ssh bandit4@bandit.labs.overthewire.org -p 2220
+// passwd pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+$ cat ./-file07
+// koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+
+//level 5
+$ ssh bandit5@bandit.labs.overthewire.org -p 2220
+// passwd koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+// help from
+//http://www.ducea.com/2008/02/12/linux-tips-find-all-files-of-a-particular-size/
+//https://unix.stackexchange.com/questions/313442/find-human-readable-files
+//https://stackoverflow.com/questions/4767396/linux-command-how-to-find-only-text-files
+//https://stackoverflow.com/questions/22122643/how-to-check-if-a-regular-file-is-executable-or-not-in-linux
+$ ~/inhere find . -size 1033c -type f -exec grep -Iq . {} \; -and -print 
+//DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+
+
+//level 6
+$ ssh bandit6@bandit.labs.overthewire.org -p 2220
+// paswd: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+$ find /  -group bandit6 -user bandit7 -size 33c
+// then I realize (trough reading the permisions) that the only file accecible with was in /var/lib/dpkg/info/bandit7.password
+$ cat /var/lib/dpkg/info/bandit7.password
+// yields HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+//level 7
+$ ssh bandit7@bandit.labs.overthewire.org -p 2220
+// passwd : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+$ cat data.txt | grep millionth
+  millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+//level 8 
+$ ssh bandit7@bandit.labs.overthewire.org -p 2220
+// paswd cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
