@@ -58,8 +58,21 @@ $ cat data.txt | grep millionth
   millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 //level 8 
-$ ssh bandit7@bandit.labs.overthewire.org -p 2220
+$ ssh bandit8@bandit.labs.overthewire.org -p 2220
 // paswd cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+$ cat data.txt | sort | uniq -u
+ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+//level 9
+$ ssh bandit9@bandit.labs.overthewire.org -p 2220
+// paswd UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+$ xxd data.txt
+//  truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk seaching by eye, i found it
+// beter soution strings data.txt | grep =
+
+
+
+
 
 
 
