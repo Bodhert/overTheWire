@@ -71,6 +71,27 @@ $ xxd data.txt
 // beter soution strings data.txt | grep =
 
 
+//level 10
+$ ssh bandit10@bandit.labs.overthewire.org -p 2220
+// truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+$ base64 -d data.txt
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+//level 11
+$ ssh bandit11@bandit.labs.overthewire.org -p 2220
+// IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+//https://www.busindre.com/cifrado_cesar_desde_la_terminal_con_tr
+
+
+//level 12
+$ ssh bandit11@bandit.labs.overthewire.org -p 2220
+// 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+$ 
+
+
+
 
 
 
