@@ -86,26 +86,50 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 
 //level 12
-$ ssh bandit11@bandit.labs.overthewire.org -p 2220
+$ ssh bandit12@bandit.labs.overthewire.org -p 2220
 // 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-$ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$ mkdir /tmp/bodhert
+$ cp data.txt /tmp/bodhert
+$ cd /tmp/bodhert
+$ xxd -r data.txt > data
+$ file data
+data: gzip compressed data, was "data2.bin", last modified: Thu Dec 28 13:34:36 2017, max compression, from Unix
+$ mv data data2.gz
+$ gunzip data2.gz
+$ file data2
+data2: bzip2 compressed data, block size = 900k
+$ mv data2 data2.bz
+$ bzip2 -d data2.bz
+$ file data2
+data2: gzip compressed data, was "data4.bin", last modified: Thu Dec 28 13:34:36 2017, max compression, from Unix
+$ mv data2 data4.gz
+$ gunzip data4.gz
+$ file data4
+data4: POSIX tar archive (GNU)
+$ mv data4 data4.tar
+$ tar xvf data4.tar
+$ tar xvf data4.tar
+data5.bin
+$ file data5.bin
+data5.bin: POSIX tar archive (GNU)
+$ mv data5.bin data5.tar
+$ tar xvf data5.tar
+data6.bin
+$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+$ mv data6.bin data6.bz
+$ bzip2 -d data6.bz
+$ file data6
+data6: POSIX tar archive (GNU)
+$ mv data6 data6.tar
+$ tar xvf data6.tar
+data8.bin
+$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", last modified: Thu Dec 28 13:34:36 2017, max compression, from Unix
+$ mv data8.bin data8.gz
+$ gunzip data8.gz
+$ file data8
+data8: ASCII text
+$ cat data8
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
