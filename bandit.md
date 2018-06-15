@@ -1,91 +1,117 @@
-// level - 0
+0. level - 0
+```console
 $ ssh bandit0@bandit.labs.overthewire.org -p 2220
 $ cat readme
 // boJ9jbbUNNfktd78OOpsqOltutMc3MY1 what cotains my readme 
+```
 
-
-// level - 1
+1. level - 1
+```console
 $ ssh bandit1@bandit.labs.overthewire.org -p 2220
 // paswd boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 $ cat ./-
 // CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+```
 
 
-//level 2
+2. level 2
+```console
 $ ssh bandit2@bandit.labs.overthewire.org -p 2220
 // paswd CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 $ cat spaces\ in\ this\ filename 
 // UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+```
 
-
-//level 3
-$ ssh bandit3@bandit.labs.overthewire.org -p 2220
+3. level 3
+```console
+$ssh bandit3@bandit.labs.overthewire.org -p 2220
 //passwd UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 $cat inhere/.hidden 
 //pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+```
 
-//level 4
+4. level 4
+```console
 $ ssh bandit4@bandit.labs.overthewire.org -p 2220
 // passwd pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 $ cat ./-file07
 // koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+```
 
-//level 5
+5. level 5
+```console
 $ ssh bandit5@bandit.labs.overthewire.org -p 2220
 // passwd koReBOKuIDDepwhWk7jZC0RTdopnAYKh
-// help from
-//http://www.ducea.com/2008/02/12/linux-tips-find-all-files-of-a-particular-size/
-//https://unix.stackexchange.com/questions/313442/find-human-readable-files
-//https://stackoverflow.com/questions/4767396/linux-command-how-to-find-only-text-files
-//https://stackoverflow.com/questions/22122643/how-to-check-if-a-regular-file-is-executable-or-not-in-linux
 $ ~/inhere find . -size 1033c -type f -exec grep -Iq . {} \; -and -print 
+
 //DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
+[help 1](http://www.ducea.com/2008/02/12/linux-tips-find-all-files-of-a-particular-size/)
+
+[help 2](https://unix.stackexchange.com/questions/313442/find-human-readable-files)
+
+[help 3](https://stackoverflow.com/questions/4767396/linux-command-how-to-find-only-text-files)
+
+[help 4](https://stackoverflow.com/questions/22122643/how-to-check-if-a-regular-file-is-executable-or-not-in-linux
+)
 
 
 
-//level 6
+6. level 6
+```console
 $ ssh bandit6@bandit.labs.overthewire.org -p 2220
 // paswd: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 $ find /  -group bandit6 -user bandit7 -size 33c
 // then I realize (trough reading the permisions) that the only file accecible with was in /var/lib/dpkg/info/bandit7.password
 $ cat /var/lib/dpkg/info/bandit7.password
 // yields HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+```
 
-//level 7
+7. level 7
+```console
 $ ssh bandit7@bandit.labs.overthewire.org -p 2220
 // passwd : HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 $ cat data.txt | grep millionth
   millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+```
 
-//level 8 
+8. level 8 
+```console
 $ ssh bandit8@bandit.labs.overthewire.org -p 2220
 // paswd cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 $ cat data.txt | sort | uniq -u
  UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+```
 
-//level 9
+9. level 9
+```console
 $ ssh bandit9@bandit.labs.overthewire.org -p 2220
 // paswd UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 $ xxd data.txt
 //  truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk seaching by eye, i found it
 // beter soution strings data.txt | grep =
+```
 
-
-//level 10
+10. level 10
+```console
 $ ssh bandit10@bandit.labs.overthewire.org -p 2220
 // truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 $ base64 -d data.txt
 The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
 
-//level 11
+11. level 11
+```console
 $ ssh bandit11@bandit.labs.overthewire.org -p 2220
 // IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 $ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-//https://www.busindre.com/cifrado_cesar_desde_la_terminal_con_tr
+```
+[help 1](https://www.busindre.com/cifrado_cesar_desde_la_terminal_con_tr)
 
 
-//level 12
+12. level 12
+```console
 $ ssh bandit12@bandit.labs.overthewire.org -p 2220
 // 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 $ mkdir /tmp/bodhert
@@ -132,4 +158,5 @@ $ file data8
 data8: ASCII text
 $ cat data8
 The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+```
 
