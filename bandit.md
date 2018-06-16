@@ -203,5 +203,8 @@ $chmod 600 keyFor14
 $ssh -i keyFor14 bandit14@bandit.labs.overthewire.org -p 2220
 ```
 
-
-
+14. 
+```console
+$ssh -i keyFor14 bandit14@bandit.labs.overthewire.org -p 2220
+$cat /etc/bandit_pass/bandit14 | netcat localhost 30000
+```
