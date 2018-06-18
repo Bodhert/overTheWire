@@ -207,4 +207,89 @@ $ssh -i keyFor14 bandit14@bandit.labs.overthewire.org -p 2220
 ```console
 $ssh -i keyFor14 bandit14@bandit.labs.overthewire.org -p 2220
 $cat /etc/bandit_pass/bandit14 | netcat localhost 30000
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+```
+
+15.
+```console
+$ssh  bandit15@bandit.labs.overthewire.org -p 2220
+//BfMYroe26WYalil77FoDi9qh59eK5xNr 
+$cat /etc/bandit_pass/bandit15 | openssl s_client -ign_eof -connect localhost:30001
+
+CONNECTED(00000003)
+depth=0 CN = bandit
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = bandit
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=bandit
+   i:/CN=bandit
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIICsjCCAZqgAwIBAgIJAKZI1xYeoXFuMA0GCSqGSIb3DQEBCwUAMBExDzANBgNV
+BAMMBmJhbmRpdDAeFw0xNzEyMjgxMzIzNDBaFw0yNzEyMjYxMzIzNDBaMBExDzAN
+BgNVBAMMBmJhbmRpdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOcX
+ruVcnQUBeHJeNpSYayQExCJmcHzSCktnOnF/H4efWzxvLRWt5z4gYaKvTC9ixLrb
+K7a255GEaUbP/NVFpB/sn56uJc1ijz8u0hWQ3DwVe5ZrHUkNzAuvC2OeQgh2HanV
+5LwB1nmRZn90PG1puKxktMjXsGY7f9Yvx1/yVnZqu2Ev2uDA0RXij/T+hEqgDMI7
+y4ZFmuYD8z4b2kAUwj7RHh9LUKXKQlO+Pn8hchdR/4IK+Xc4+GFOin0XdQdUJaBD
+8quOUma424ejF5aB6QCSE82MmHlLBO2tzC9yKv8L8w+fUeQFECH1WfPC56GcAq3U
+IvgdjGrU/7EKN5XkONcCAwEAAaMNMAswCQYDVR0TBAIwADANBgkqhkiG9w0BAQsF
+AAOCAQEAnrOty7WAOpDGhuu0V8FqPoKNwFrqGuQCTeqhQ9LP0bFNhuH34pZ0JFsH
+L+Y/q4Um7+66mNJUFpMDykm51xLY2Y4oDNCzugy+fm5Q0EWKRwrq+hIM+5hs0RdC
+nARP+719ddmUiXF7r7IVP2gK+xqpa8+YcYnLuoXEtpKkrrQCCUiqabltU5yRMR77
+3wqB54txrB4IhwnXqpO23kTuRNrkG+JqDUkaVpvct+FAdT3PODMONP/oHII3SH9i
+ar/rI9k+4hjlg4NqOoduxX9M+iLJ0Zgj6HAg3EQVn4NHsgmuTgmknbhqTU3o4IwB
+XFnxdxVy0ImGYtvmnZDQCGivDok6jA==
+-----END CERTIFICATE-----
+subject=/CN=bandit
+issuer=/CN=bandit
+---
+No client certificate CA names sent
+---
+SSL handshake has read 1015 bytes and written 631 bytes
+---
+New, TLSv1/SSLv3, Cipher is AES128-SHA
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1
+    Cipher    : AES128-SHA
+    Session-ID: 43C923F481C5EA00B32BF1F295338680EA945B3F2BF5938F2EF9A46E1017E242
+    Session-ID-ctx:
+    Master-Key: 0F7194159CD6FC6625BF4259B45781EB6183AC44C942BAF9723337C952DF8A852A708E277393F6CFC030D6B0B09988FF
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - 08 f0 15 a5 d6 6f a0 e8-06 d6 bb a4 0c 33 eb 04   .....o.......3..
+    0010 - e9 a3 3a 3b d9 c5 5d b7-08 c1 7c 83 6e 01 63 d1   ..:;..]...|.n.c.
+    0020 - f0 8e a9 85 79 16 10 98-f1 32 83 e2 db 4c 5e ab   ....y....2...L^.
+    0030 - 6b 37 04 78 22 ac 63 cb-42 25 58 c4 cf 4a 2d 27   k7.x".c.B%X..J-'
+    0040 - 7f 23 7d c8 ee 31 aa 8a-bf 13 f1 28 f9 1b d8 f2   .#}..1.....(....
+    0050 - 73 83 df 0d 5d d5 e9 a9-2b 3e a1 5b b0 c3 4f e1   s...]...+>.[..O.
+    0060 - be 0f 3f 1c 01 72 ab 88-c8 19 97 76 95 ba 29 f7   ..?..r.....v..).
+    0070 - 12 50 60 77 7d 63 8a 6a-cb be 54 e0 af 53 31 7a   .P`w}c.j..T..S1z
+    0080 - 4a 55 6e 50 8f 83 82 ea-51 80 3f 80 cf 3b 79 8a   JUnP....Q.?..;y.
+    0090 - 35 32 e7 b1 14 a3 d0 56-ce 14 cf 32 6f a1 f4 b2   52.....V...2o...
+
+    Start Time: 1529364508
+    Timeout   : 300 (sec)
+    Verify return code: 18 (self signed certificate)
+---
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+closed
+
 ```
