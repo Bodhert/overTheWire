@@ -443,5 +443,22 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 19.
  ```
+$ssh  bandit19@bandit.labs.overthewire.org -p 2220
+ ```
+
+ I have troubles undestading the binary , but the binary already has the s flag, so
 
  ```
+$ ll
+total 28
+drwxr-xr-x  2 root     root     4096 Dec 28 14:34 ./
+drwxr-xr-x 29 root     root     4096 Dec 28 14:34 ../
+-rw-r--r--  1 root     root      220 Sep  1  2015 .bash_logout
+-rw-r--r--  1 root     root     3771 Sep  1  2015 .bashrc
+-rw-r--r--  1 root     root      655 Jun 24  2016 .profile
+-rwsr-x---  1 bandit20 bandit19 7408 Dec 28 14:34 bandit20-do*
+ // the flag that i was talking about 's'
+ $ ./bandit20-do cat  /etc/bandit_pass/bandit20 
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+ ``` 
+with that binary I already was bandit20
