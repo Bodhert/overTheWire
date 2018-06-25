@@ -419,3 +419,29 @@ $nano keyFor17
 // i copy the key previosuly given here
 $chmod 600 keyFor17
 ```
+
+
+17.
+
+```
+$ ssh -i keyFor17 bandit17@bandit.labs.overthewire.org -p 2220
+$ diff passwords.new passwords.old
+42c42
+< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+---
+> 6vcSC74ROI95NqkKaeEC2ABVMDX9TyUr 
+```
+
+18.
+```
+$ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat ~/readme'
+This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
+bandit18@bandit.labs.overthewire.org's password: 
+//kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
+
+19.
+ ```
+
+ ```
