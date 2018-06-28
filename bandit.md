@@ -462,3 +462,33 @@ drwxr-xr-x 29 root     root     4096 Dec 28 14:34 ../
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
  ``` 
 with that binary I already was bandit20
+
+20.
+I conect to bandit 20 in two diferent terminals
+* terminal 1
+```
+$ ssh  bandit20@bandit.labs.overthewire.org -p 2220
+// put it to listen in port 1235
+$ nc -l 1235
+```
+* terminal 2
+```
+./suconnect 1235
+```
+then in the first terminal i copy the password of the current level 
+* terminal 1
+```
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+```
+
+* terminal 2 
+```
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+```
+send the password for the next level 
+* terminal 1
+```
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
+
