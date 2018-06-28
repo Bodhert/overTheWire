@@ -492,3 +492,6 @@ send the password for the next level
 gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 ```
 
+very importan tool that i use is tmux , here is a simple [guide](https://www.ostechnix.com/4-ways-keep-command-running-log-ssh-session/) for it.
+
+[guide 2](https://gist.github.com/MohamedAlaa/2961058)
